@@ -1,6 +1,6 @@
-# FIXME: "id: bigserial" causes ridgepole warning:
+# FIXME: "id: :bigserial" causes ridgepole warning:
 # [WARNING] No difference of schema configuration for table
-create_table "strload_jobs", primary_key: "job_id", id: 'bigserial', force: :cascade do |t|
+create_table "strload_jobs", primary_key: "job_id", id: :bigserial, force: :cascade do |t|
   t.integer  "task_id",     limit: 8,   null: false
   t.string   "process_id",  limit: 128, null: false
   t.string   "status",      limit: 16,  null: false
