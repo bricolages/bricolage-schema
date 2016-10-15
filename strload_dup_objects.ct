@@ -1,0 +1,8 @@
+CREATE TABLE strload_dup_objects (
+  object_url character varying(512) NOT NULL
+  , object_size integer NOT NULL
+  , data_source_id varchar(256) NOT NULL
+  , message_id varchar(64) NOT NULL
+  , event_time timestamp with time zone NOT NULL
+  , submit_time timestamp with time zone NOT NULL
+);

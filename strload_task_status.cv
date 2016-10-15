@@ -1,0 +1,42 @@
+create view
+    strload_task_status
+as select
+    tsk.task_id
+    , latest_job_id
+    , exec_count
+    , tbl.schema_name || '.' || tbl.table_name as dest_table
+    , submit_time ::timestamp(0)
+    , start_time ::timestamp(0)
+    , finish_time ::timestamp(0)
+    , status
+    , substring(message, 1, 30) as err_msg
+from
+    strload_tasks tsk
+    left outer join (
+        select
+            task_id
+            , latest_job_id
+            , exec_count
+            , start_time
+            , finish_time
+            , status
+            , message
+        from
+            strload_jobs
+            inner join (
+                select
+                    max(job_id) as latest_job_id
+                    , count(job_id) as exec_count
+                from
+                    strload_jobs
+                group by
+                    task_id
+                ) latest_job
+                on job_id = latest_job_id
+        ) jobs
+        using (task_id)
+    left outer join strload_tables tbl
+        using (table_id)
+order by
+    task_id
+;
