@@ -10,6 +10,7 @@ RUN cd /tmp && bundle install -j4 --deployment --without 'development test cap'
 
 WORKDIR /app
 COPY . /app
+RUN mv database.yml.docker database.yml
 RUN cp -a /tmp/vendor /app/
 
-CMD ["bundle", "exec", "ridgepole", "-f", "Schemafile", "-c", "database.yml.docker", "--merge"]
+CMD ["bundle", "exec", "ridgepole", "-f", "Schemafile", "-c", "database.yml", "--merge", "--dry-run"]

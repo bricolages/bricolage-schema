@@ -1,0 +1,17 @@
+db:
+  image: postgres:9.5
+  ports:
+    - 5432
+  environment:
+    POSTGRES_DB: bricolage
+    POSTGRES_USER: bricolage
+    POSTGRES_PASSWORD: bricolage
+
+app:
+  build: .
+  links:
+    - db
+  volumes:
+    - /tmp:/log
+  environment:
+    DATABASE_URL: "postgresql://bricolage:bricolage@db:5432/bricolage"
