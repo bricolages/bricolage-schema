@@ -1,9 +1,0 @@
-CREATE TABLE strload_tasks (
-  task_id bigserial
-  , task_class varchar(36) NOT NULL
-  , table_id integer NOT NULL
-  , submit_time timestamp with time zone NOT NULL
-  , CONSTRAINT strload_tasks_pkey PRIMARY KEY (task_id)
-)
-;
-CREATE INDEX strload_tasks_table_id ON strload_tasks (table_id);

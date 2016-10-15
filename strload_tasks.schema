@@ -1,0 +1,7 @@
+create_table "strload_tasks", primary_key: "task_id", id: 'bigserial', force: :cascade do |t|
+  t.string   "task_class",  limit: 36, null: false
+  t.integer  "table_id",               null: false
+  t.datetime "submit_time",            null: false
+end
+
+add_index "strload_tasks", ["table_id"], name: "strload_tasks_table_id", using: :btree

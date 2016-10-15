@@ -1,0 +1,10 @@
+create_table "strload_tables", primary_key: "table_id", force: :cascade do |t|
+  t.string  "data_source_id",  limit: 256,                 null: false
+  t.string  "schema_name",     limit: 128
+  t.string  "table_name",      limit: 128
+  t.integer "load_batch_size",                             null: false
+  t.integer "load_interval",                               null: false
+  t.boolean "disabled",                    default: false, null: false
+end
+
+add_index "strload_tables", ["data_source_id"], name: "strload_tables_data_source_id_key", unique: true, using: :btree
