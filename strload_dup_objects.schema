@@ -1,8 +1,0 @@
-create_table "strload_dup_objects", id: false, force: :cascade do |t|
-  t.string   "object_url",     limit: 512, null: false
-  t.integer  "object_size",                null: false
-  t.string   "data_source_id", limit: 256, null: false
-  t.string   "message_id",     limit: 64,  null: false
-  t.datetime "event_time",                 null: false
-  t.datetime "submit_time",                null: false
-end

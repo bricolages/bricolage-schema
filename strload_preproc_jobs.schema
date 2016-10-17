@@ -1,0 +1,8 @@
+create_table "strload_preproc_jobs", primary_key: "preproc_job_id", id: :bigserial, force: :cascade do |t|
+  t.integer  "packet_id",       limit: 8,  null: false
+  t.integer  "object_id",       limit: 8,  null: false
+  t.string   "status",          limit: 16, null: false
+  t.datetime "start_time",                 null: false
+  t.datetime "finish_time"
+  t.text     "message",                    null: false
+end

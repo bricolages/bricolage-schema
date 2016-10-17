@@ -1,6 +1,0 @@
-create_table "strload_task_objects", id: false, force: :cascade do |t|
-  t.integer "task_id",   limit: 8, null: false
-  t.integer "object_id", limit: 8, null: false
-end
-
-add_index 'strload_task_objects', ['object_id'], name: 'strload_task_objects_object_id', unique: true, using: :btree
