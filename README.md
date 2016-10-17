@@ -7,18 +7,24 @@ This schema is shared by Bricolage streaming loader, preprocessor, and web conso
 
 Create a database on PostgreSQL (Bricolage control DB).
 
-  > create database bricolage;
+```
+> create database bricolage;
+```
 
 Edit database.yml.
 Optionally, you can use database.yml.docker for Docker environment.
 
 Test Ridgepole (dry run):
 
-  $ ./ridgepole_dryrun.sh
+```
+$ ./ridgepole_dryrun.sh
+```
 
 Run merge:
 
-  $ ./ridgepole_merge.sh
+```
+$ ./ridgepole_merge.sh
+```
 
 ## License
 
