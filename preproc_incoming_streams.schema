@@ -1,5 +1,6 @@
 create_table "preproc_incoming_streams", primary_key: "stream_id", force: :cascade do |t|
   t.text     "stream_name",     null: false
-  t.text     "stream_prefix",   null: false
   t.datetime "create_time",     null: false
 end
+
+add_index "preproc_incoming_streams", ["stream_name"], name: "preproc_incoming_streams_stream_name_idx", using: :btree, unique: true
