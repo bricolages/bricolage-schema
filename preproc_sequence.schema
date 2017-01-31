@@ -1,3 +1,1 @@
-create_table "preproc_sequence", primary_key: "id", force: :cascade do |t|
-  t.bigint     "value",     null: false
-end
+execute("create sequence if not exists preproc_sequence increment 10000 start with 0 minvalue 0")
