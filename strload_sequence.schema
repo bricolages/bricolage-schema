@@ -1,0 +1,1 @@
+execute("create sequence if not exists strload_sequence increment 10000 start with 0 minvalue 0")
