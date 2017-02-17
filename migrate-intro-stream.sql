@@ -1,3 +1,5 @@
+begin;
+
 create table strload_streams
 ( stream_id serial not null primary key
 , stream_name text not null
@@ -43,3 +45,5 @@ select
 from preproc_definition as p
     left outer join strload_streams as s on s.stream_name = p.target_table
 ;
+
+commit;
