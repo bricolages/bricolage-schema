@@ -7,3 +7,4 @@ create_table "strload_streams", primary_key: "stream_id", force: :cascade do |t|
 end
 
 add_index "strload_streams", ["table_id"], name: "strload_streams_table_id_idx", using: :btree
+add_index "strload_streams", ["stream_name"], name: "strload_streams_stream_name_idx", using: :btree, unique: true
