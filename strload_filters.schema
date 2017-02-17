@@ -1,0 +1,11 @@
+create_table "strload_filters", primary_key: "filter_id", force: :cascade do |t|
+  t.integer  "stream_id",               null: false
+  t.text     "target_column",           null: false
+  t.integer  "application_order",       null: false, default: 0
+  t.text     "operator_id",             null: false
+  t.text     "params",                  null: false
+  t.datetime "created_at",              null: false
+  t.datetime "updated_at",              null: false
+end
+
+add_index "strload_filters", ["stream_id"], name: "strload_filters_stream_id_idx", using: :btree

@@ -1,0 +1,9 @@
+create_table "strload_streams", primary_key: "stream_id", force: :cascade do |t|
+  t.text     "stream_name", null: false
+  t.integer  "table_id"
+  t.boolean  "disabled", null: false
+  t.boolean  "discard", null: false, default: false
+  t.boolean  "no_dispatch", null: false, default: false
+end
+
+add_index "strload_streams", ["table_id"], name: "strload_streams_table_id_idx", using: :btree
