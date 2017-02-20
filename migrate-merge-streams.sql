@@ -25,5 +25,7 @@ from strload_streams
 begin;
     alter table strload_streams rename to strload_streams_old;
     alter table strload_streams_new rename to strload_streams;
+    alter index strload_streams_stream_name_idx rename to strload_streams_old_stream_name_idx;
+    alter index strload_streams_table_id_idx rename to strload_streams_old_table_id_idx;
     select setval('strload_streams_new_stream_id_seq', (select last_value from strload_streams_stream_id_seq));
 commit;
