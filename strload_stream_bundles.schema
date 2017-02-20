@@ -1,0 +1,8 @@
+create_table "strload_stream_bundles", primary_key: "stream_bundle_id", force: :cascade do |t|
+  t.integer "stream_id", null: false
+  t.text    "s3_bucket", null: false
+  t.text    "s3_prefix", null: false
+end
+
+add_index "strload_stream_bundles", ["stream_id"], name: "strload_stream_bundles_stream_id_idx", using: :btree
+add_index "strload_stream_bundles", ["s3_bucket", "s3_prefix"], name: "strload_stream_bundles_s3_bucket_s3_prefix_idx", unique: true, using: :btree
