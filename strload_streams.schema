@@ -6,6 +6,7 @@ create_table "strload_streams", primary_key: "stream_id", id: :serial, force: :c
   t.boolean  "no_dispatch", null: false, default: false
   t.boolean  "initialized", null: false, default: false
   t.datetime "create_time", null: false
+  t.boolean  "column_initialized", null: false, default: false
 end
 
 add_index "strload_streams", ["table_id"], name: "strload_streams_table_id_idx", using: :btree
