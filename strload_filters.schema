@@ -1,4 +1,4 @@
-create_table "strload_filters", primary_key: "filter_id", force: :cascade do |t|
+create_table "strload_filters", primary_key: "filter_id", id: :serial, force: :cascade do |t|
   t.integer  "stream_id",               null: false
   t.text     "target_column",           null: false
   t.integer  "application_order",       null: false, default: 0

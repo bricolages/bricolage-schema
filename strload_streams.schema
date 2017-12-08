@@ -1,4 +1,4 @@
-create_table "strload_streams", primary_key: "stream_id", force: :cascade do |t|
+create_table "strload_streams", primary_key: "stream_id", id: :serial, force: :cascade do |t|
   t.text     "stream_name", null: false
   t.integer  "table_id"
   t.boolean  "disabled", null: false

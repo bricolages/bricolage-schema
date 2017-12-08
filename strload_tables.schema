@@ -1,4 +1,4 @@
-create_table "strload_tables", primary_key: "table_id", force: :cascade do |t|
+create_table "strload_tables", primary_key: "table_id", id: :serial, force: :cascade do |t|
   t.string  "data_source_id",  limit: 256,                 null: false
   t.string  "schema_name",     limit: 128
   t.string  "table_name",      limit: 128
