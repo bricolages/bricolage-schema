@@ -1,4 +1,4 @@
-create_table "strload_stream_bundles", primary_key: "stream_bundle_id", force: :cascade do |t|
+create_table "strload_stream_bundles", primary_key: "stream_bundle_id", id: :serial, force: :cascade do |t|
   t.integer "stream_id", null: false
   t.text    "s3_bucket", null: false
   t.text    "s3_prefix", null: false
