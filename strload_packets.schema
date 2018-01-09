@@ -1,0 +1,13 @@
+create_table "strload_packets", primary_key: "packet_id", force: :cascade do |t|
+  t.text "object_url", null: false
+  t.integer "object_size", null: false
+  t.datetime "object_created_time", null: true
+  t.bigint "stream_id", null: false
+
+  # filled after preproc is succeeded
+  t.bigint "chunk_id", null: true
+  t.boolean "processed", null: false, default: false
+end
+
+add_index "strload_packets", ["stream_id", "object_created_time"], name: "strload_packets_idx_stream_id_object_created_time", using: :btree
+add_index "strload_packets", ["object_url"], name: "strload_packets_idx_object_url", unique: true, using: :btree
