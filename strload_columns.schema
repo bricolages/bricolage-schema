@@ -1,0 +1,12 @@
+create_table "strload_columns", primary_key: "column_id", force: :cascade do |t|
+  t.integer  "stream_id", null: false
+  t.text     "column_name", null: false
+  t.text     "source_name"
+  t.text     "value_type", null: false
+  t.integer  "value_length"
+  t.text     "source_offset"
+  t.text     "zone_offset"
+  t.datetime "create_time", null: false
+end
+
+add_index "strload_columns", ["stream_id"], name: "strload_columns_stream_id_idx", using: :btree
