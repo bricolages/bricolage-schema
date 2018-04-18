@@ -9,4 +9,4 @@ create_table "strload_columns", primary_key: "column_id", force: :cascade do |t|
   t.datetime "create_time", null: false
 end
 
-add_index "strload_columns", ["stream_id"], name: "strload_columns_stream_id_idx", using: :btree
+add_index "strload_columns", ["stream_id", "column_name"], name: "strload_columns_stream_id_column_name_idx", unique: true, using: :btree
