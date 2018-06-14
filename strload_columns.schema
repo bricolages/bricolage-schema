@@ -8,6 +8,7 @@ create_table "strload_columns", primary_key: "column_id", force: :cascade do |t|
   t.text     "zone_offset"
   t.datetime "create_time", null: false
   t.boolean  "sortkey_column", null: false, default: false
+  t.boolean  "partition_source", null: false, default: false
 end
 
 add_index "strload_columns", ["stream_id", "column_name"], name: "strload_columns_stream_id_column_name_idx", unique: true, using: :btree
