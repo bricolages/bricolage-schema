@@ -2,6 +2,7 @@ create_table "strload_preproc_messages", primary_key: "preproc_message_id", forc
   t.string "message_id", limit: 64, null: false
   t.datetime "event_time", null: false
   t.datetime "received_time", null: false
+  t.bigint "stream_id", null: true
   t.bigint "packet_id", null: true
   t.text "object_url", null: false
   t.boolean "handled", null: false, default: false
