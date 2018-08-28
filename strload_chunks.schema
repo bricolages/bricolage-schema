@@ -1,0 +1,15 @@
+create_table "strload_chunks", primary_key: "chunk_id", force: :cascade do |t|
+  t.text "object_url", null: false
+  t.bigint "object_size", null: false, default: 0
+  t.integer "object_rows", null: false, default: 0
+  t.integer "error_rows", null: false, default: 0
+  t.datetime "object_created_time", null: true
+  t.bigint "table_id", null: false
+
+  # filled later
+  t.boolean "dispatched", null: false, default: false
+  t.boolean "loaded", null: false, default: false
+end
+
+add_index "strload_chunks", ["object_url"], name: "strload_chunks_idx_object_url", unique: true, using: :btree
+# create index strload_chunks_idx_not_loaded on strload_chunks (table_id) where dispatched and not loaded;

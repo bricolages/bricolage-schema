@@ -1,0 +1,10 @@
+create_table "strload_preproc_jobs", primary_key: "preproc_job_id", force: :cascade do |t|
+  t.bigint "preproc_message_id", null: false
+  t.datetime "start_time", null: false
+  t.datetime "end_time", null: true
+  t.string "status", limit: 8, null: false
+  t.text "message", null: false
+end
+
+add_index "strload_preproc_jobs", ["preproc_message_id", "end_time"], name: "strload_preproc_jobs_idx_preproc_message_id_end_time", using: :btree
+add_index "strload_preproc_jobs", ["start_time"], name: "strload_preproc_jobs_idx_start_time", using: :btree
