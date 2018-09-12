@@ -1,0 +1,5 @@
+create_table "strload_owners", primary_key: "owner_id", id: :serial, force: :cascade do |t|
+  t.text "name"
+  t.text "email_address"
+  t.text "slack_channel"
+end
