@@ -1,0 +1,4 @@
+create_table "strload_table_descriptions", primary_key: "table_id", id: :serial, force: :cascade do |t|
+  t.integer "owner_id", null: true
+  t.text "description", null: true
+end
