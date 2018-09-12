@@ -11,4 +11,5 @@ end
 add_index "strload_preproc_messages", ["message_id"], name: "strload_preproc_messages_idx_message_id", unique: true, using: :btree
 add_index "strload_preproc_messages", ["object_url"], name: "strload_preproc_messages_idx_object_url", using: :btree
 add_index "strload_preproc_messages", ["event_time"], name: "strload_preproc_messages_idx_event_time", using: :btree
-add_index "strload_preproc_messages", ["stream_id", "event_time"], name: "strload_preproc_messages_idx_stream_id_not_handled", where: "not handled"
+# causes error
+#add_index "strload_preproc_messages", ["stream_id", "event_time"], name: "strload_preproc_messages_idx_stream_id_not_handled", where: "not handled"
