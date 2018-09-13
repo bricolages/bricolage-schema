@@ -2,8 +2,6 @@ create_table "strload_stream_bundles", primary_key: "stream_bundle_id", id: :ser
   t.integer "stream_id", null: false
   t.text    "s3_bucket", null: false
   t.text    "s3_prefix", null: false
-  t.text    "dest_bucket", null: false
-  t.text    "dest_prefix", null: false
 end
 
 add_index "strload_stream_bundles", ["stream_id"], name: "strload_stream_bundles_stream_id_idx", using: :btree
