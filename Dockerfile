@@ -1,4 +1,4 @@
-FROM ruby:2.3.1-slim
+FROM ruby:2.5.5-slim
 MAINTAINER Minero Aoki <minero-aoki@cookpad.com>
 
 RUN mkdir -p /log

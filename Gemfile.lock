@@ -18,13 +18,13 @@ GEM
       concurrent-ruby (~> 1.0)
     minitest (5.11.3)
     pg (1.1.4)
-    ridgepole (0.8.0)
+    ridgepole (0.8.3)
       activerecord (>= 5.0.1, < 6.1)
       diffy
     thread_safe (0.3.6)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    zeitwerk (2.1.9)
+    zeitwerk (2.1.10)
 
 PLATFORMS
   ruby
