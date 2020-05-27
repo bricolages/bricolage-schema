@@ -1,0 +1,15 @@
+# Separate table to avoid locking strload_streams
+
+create_table "strload_stream_stats", id: false, force: :cascade do |t|
+  t.integer "stream_id", null: false
+  t.bigint "max_chunk_id", null: false
+  t.bigint "total_object_count", null: false
+  t.bigint "total_object_size", null: false
+  t.datetime "latest_object_creation_time", null: false
+  t.bigint "total_success_row_count", null: false
+  t.bigint "total_error_row_count", null: false
+  t.datetime "data_timestamp", null: false
+end
+
+add_index "strload_stream_stats", ["stream_id"], name: "strload_stream_stats_idx_stream_id", unique: true, using: :btree
+add_index "strload_stream_stats", ["max_chunk_id"], name: "strload_stream_stats_idx_max_chunk_id", unique: true, using: :btree
