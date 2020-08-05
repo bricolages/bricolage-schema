@@ -1,2 +1,2 @@
 #!/bin/sh
-exec bundle exec ridgepole -f Schemafile -c database.yml --merge --dry-run
+exec $(dirname $0)/ridgepole_merge.sh --dry-run "$@"
